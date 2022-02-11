@@ -1,5 +1,4 @@
 from behave import *
-from selenium import webdriver
 from configuration.config import Browser,TestData
 from pages.LoginPage import LoginPage
 

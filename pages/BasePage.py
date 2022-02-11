@@ -1,4 +1,5 @@
 from selenium.webdriver import ActionChains
+from selenium import webdriver
 from  selenium.webdriver.support.ui import  WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException, ElementNotVisibleException, TimeoutException, NoSuchElementException, ElementNotInteractableException, InvalidElementStateException, InvalidSelectorException as EX
@@ -39,3 +40,11 @@ class BasePage:
             return element.is_displayed()
         except:
             return False
+
+    def find(self, locator, time=3):
+        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
+                                                      message=f"Can't find element by locator {locator}")
+
+    def findAll(self, locator, time=3):
+        return WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(locator),
+                                                      message=f"Can't find elements by locator {locator}")
