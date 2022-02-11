@@ -1,3 +1,5 @@
+import time
+
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
@@ -21,12 +23,13 @@ class ProductPage(BasePage):
         super().__init__(driver)
 
     def addItemsToCard(self):
-        items=self.findAll(self.ADD_TO_CARD)
-        for i in range(len(items)-1):
-            self.click_element(items[i])
-        return items
+        self.click_all_element(self.ADD_TO_CARD)
+
+    def checkProduct_page(self):
+        assert self.get_element_text(self.ITEMS_TITLE)=="PRODUCTS"
+
     def checkAddItemsInBasket(self):
-        assert int(self.get_element_text(self.ITEMS_IN_BASKET))==len(self.addItemsToCard())
+        assert int(self.get_element_text(self.ITEMS_IN_BASKET))==len(self.findAll(self.ITEMS_LIST))
 
 
 

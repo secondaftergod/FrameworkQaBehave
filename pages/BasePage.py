@@ -12,8 +12,8 @@ class BasePage:
 
     def click_element(self, by_locator):
         try:
-            element = WebDriverWait(self.driver, Data.EXPLICIT_WAIT).until(EC.visibility_of_element_located(by_locator))
-            self.driver.execute_script("arguments[0].click();", element)
+            WebDriverWait(self.driver, Data.EXPLICIT_WAIT).until(EC.visibility_of_element_located(by_locator)).click()
+
         except EX as e:
             print("Exception! Can't click on the element")
 
@@ -24,8 +24,8 @@ class BasePage:
             print("Exception! Can't click on the element")
 
     def get_element_text(self, by_locator):
-        element = WebDriverWait(self.driver, Data.EXPLICIT_WAIT).until(EC.visibility_of_element_located(by_locator))
-        return element.text
+        return WebDriverWait(self.driver, Data.EXPLICIT_WAIT).until(EC.visibility_of_element_located(by_locator)).text
+
 
     def get_title(self):
         return self.driver.title
@@ -41,10 +41,16 @@ class BasePage:
         except:
             return False
 
-    def find(self, locator, time=3):
-        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator),
-                                                      message=f"Can't find element by locator {locator}")
+    def find(self, by_locator, time=3):
+        return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(by_locator),
+                                                      message=f"Can't find element by locator {by_locator}")
 
-    def findAll(self, locator, time=3):
-        return WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(locator),
-                                                      message=f"Can't find elements by locator {locator}")
+    def findAll(self, by_locator, time=3):
+        elements=WebDriverWait(self.driver, time).until(EC.presence_of_all_elements_located(by_locator),
+                                                      message=f"Can't find elements by locator {by_locator}")
+        return elements
+
+    def click_all_element(self,by_locator):
+        for i in self.findAll(by_locator):
+            i.click()
+
