@@ -8,5 +8,12 @@ Feature: Validate the products list
 
   Scenario: Add items to basked and check
     And Add items to card
-    Then Check items in basket
+    Then Check items in basket after Add
+    Then Close the browser
+
+  Scenario: Remove items from basked and check
+    And Add items to card
+    Then Check items in basket after Add
+    Then Remove items
+    Then Check items in basket after Remove
     Then Close the browser

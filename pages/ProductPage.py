@@ -28,8 +28,16 @@ class ProductPage(BasePage):
     def checkProduct_page(self):
         assert self.get_element_text(self.ITEMS_TITLE)=="PRODUCTS"
 
-    def checkAddItemsInBasket(self):
+    def checkAddAllItemsInBasket(self):
         assert int(self.get_element_text(self.ITEMS_IN_BASKET))==len(self.findAll(self.ITEMS_LIST))
+
+    def removeItemsFromBasket(self):
+        self.click_all_element(self.REMOVE_FROM_CARD)
+
+    def checkAddItemsInBasketRemove(self):
+        self.verify_element_displayed(self.ITEMS_IN_BASKET)
+
+
 
 
 

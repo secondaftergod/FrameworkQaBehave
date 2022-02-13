@@ -34,11 +34,27 @@ def addItemsToBasket(context):
     except:
         context.driver.close()
         assert False, "Test is failed when add all items to card"
-@then(u'Check items in basket')
+@then(u'Check items in basket after Add')
 def checkBasket(context):
     try:
-        context.productPage.checkAddItemsInBasket()
+        context.productPage.checkAddAllItemsInBasket()
     except:
         context.driver.close()
         assert False, "Test items after add in basket failed"
+
+@then(u'Check items in basket after Remove')
+def checkBasket(context):
+    try:
+        context.productPage.checkAddItemsInBasketRemove()
+    except:
+        context.driver.close()
+        assert False, "Test items after remove in basket failed"
+
+@then(u'Remove items')
+def removeItems(context):
+    try:
+        context.productPage.removeItemsFromBasket()
+    except:
+        context.driver.close()
+        assert False,"Remove items is failed"
 
