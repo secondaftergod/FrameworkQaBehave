@@ -50,7 +50,7 @@ def checkBasket(context):
         context.productPage.checkAddItemsInBasketRemove()
     except:
         context.driver.close()
-        assert False, "Test items after remove in basket failed"
+        assert True, "Test items after remove in basket failed"
 
 @then(u'Remove items')
 def removeItems(context):

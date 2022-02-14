@@ -33,7 +33,7 @@ class ProductPage(BasePage):
         self.click_all_element(self.REMOVE_FROM_CARD)
 
     def checkAddItemsInBasketRemove(self):
-        self.verify_element_displayed(self.ITEMS_IN_BASKET)
+        assert self.verify_element_displayed(self.ITEMS_IN_BASKET)
 
     def clickOnBuyButton(self):
         self.click_element(self.BUY_BUTTON)
