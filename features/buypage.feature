@@ -13,6 +13,12 @@ Feature: Check buy list
     Then Check items inside buy page
 
   Scenario: Remove items from buyPage
-    Then Remove all items from buyPage
+    And Remove all items from buyPage
+
+  Scenario: Go back on productPage
+    And Click on back button
+    Then The product page open
+
+
 
 

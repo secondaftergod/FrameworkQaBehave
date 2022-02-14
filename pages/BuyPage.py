@@ -6,7 +6,7 @@ class BuyPage(BasePage):
     buy_page_title = (By.XPATH,"//span[@class='title']")
     items_on_buy_page = (By.XPATH,"//*[@class='inventory_item_name']")
     remove_button = (By.XPATH,"//button[text()='Remove']")
-    backToShopping_button = (By.XPATH,"//*[@id='continue-shopping']")
+    backToShopping_button = (By.XPATH,'//*[@id="continue-shopping"]')
     checkout_button = (By.XPATH,"//*[@id='checkout']")
 
     def __init__(self, driver):
@@ -21,4 +21,9 @@ class BuyPage(BasePage):
     def removeItems(self):
         self.click_all_element(self.remove_button)
         assert self.verify_element_displayed(self.items_on_buy_page)
+
+    def comebackOnProductPage(self):
+        self.click_element(self.backToShopping_button)
+
+
 

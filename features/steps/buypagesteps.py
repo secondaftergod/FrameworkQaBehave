@@ -29,4 +29,10 @@ def step_impl(context):
         context.driver.close()
         assert True,'Items not deleted'
 
+@then(u'Click on back button')
+def step_impl(context):
+    context.buyPage.comebackOnProductPage()
+
+
+
 
