@@ -8,7 +8,11 @@ Feature: Check buy list
     Then Add items to card
     Then Click on buy button
 
-  Scenario: Check buy page title
-    Then Check title
+  Scenario: Check buy page title and buy items
+    And Check title
+    Then Check items inside buy page
+
+  Scenario: Remove items from buyPage
+    Then Remove all items from buyPage
 
 

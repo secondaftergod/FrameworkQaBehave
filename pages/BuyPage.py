@@ -15,3 +15,10 @@ class BuyPage(BasePage):
     def check_page(self):
         assert self.get_element_text(self.buy_page_title)=="YOUR CART"
 
+    def check_itemsOnPage(self):
+        assert len(self.findAll(self.items_on_buy_page))==6
+
+    def removeItems(self):
+        self.click_all_element(self.remove_button)
+        assert self.verify_element_displayed(self.items_on_buy_page)
+
