@@ -35,6 +35,9 @@ class ProductPage(BasePage):
     def checkAddItemsInBasketRemove(self):
         self.verify_element_displayed(self.ITEMS_IN_BASKET)
 
+    def clickOnBuyButton(self):
+        self.click_element(self.BUY_BUTTON)
+
 
 
 

@@ -1,5 +1,5 @@
 from selenium import webdriver
-
+from behave import fixture
 
 def Browser():
     options = webdriver.ChromeOptions()
