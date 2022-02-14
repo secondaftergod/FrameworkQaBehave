@@ -16,3 +16,11 @@ class CheckoutPage(BasePage):
 
     def check_page(self):
         assert self.get_element_text(self.checkout_title)=="CHECKOUT: YOUR INFORMATION"
+
+    def clickContinueButton(self):
+        self.click_element(self.continue_button)
+
+    def whriteInfo(self,first,last,zip):
+        self.input_element(self.order_firstName,first)
+        self.input_element(self.order_lastName,last)
+        self.input_element(self.order_Zip,zip)

@@ -11,3 +11,21 @@ Feature: Validate the products list
 
   Scenario: Check buy page title
     Then Check title checkout page
+
+  Scenario: Checkout with valid info
+    And Provide the firstname "<firstname>" and lastname "<lastname> and zip "<zip>"
+    And Click on the continue button
+    Then Error checkout
+    Then Close the browser
+  Scenario Outline: Checkout with invalid info
+    And Provide the firstname "<firstname>" and lastname "<lastname> and zip "<zip>"
+    And Click on the continue button
+    Then Error checkout
+    Then Close the browser
+    Examples:
+      | firstname | lastname | zip |
+      |           |1         |1    |
+      |1          |          |1    |
+      |1          |1         |     |
+
+
