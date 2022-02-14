@@ -14,3 +14,6 @@ class BuyPage(BasePage):
 
     def check_page(self):
         assert self.get_element_text(self.buy_page_title)=="YOUR CART"
+
+    def clickOnBuyButton(self):
+        self.click_element()
