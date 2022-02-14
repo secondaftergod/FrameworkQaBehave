@@ -5,7 +5,6 @@ Feature: Validate the login feature
     When Open the "https://www.saucedemo.com/" website
     Then The login has been opened
 
-  @valid_login
   Scenario: Login with valid credentials
     And Provide the username "standard_user" and password "secret_sauce"
     And Click on the Login button
