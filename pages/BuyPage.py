@@ -25,5 +25,8 @@ class BuyPage(BasePage):
     def comebackOnProductPage(self):
         self.click_element(self.backToShopping_button)
 
+    def goToCheckout(self):
+        self.click_element(self.checkout_button)
+
 
 

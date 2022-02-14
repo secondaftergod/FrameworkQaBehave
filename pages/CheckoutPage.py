@@ -15,4 +15,4 @@ class CheckoutPage(BasePage):
         super().__init__(driver)
 
     def check_page(self):
-        assert self.get_element_text(self.checkout_title)=="Checkout: Your Information"
+        assert self.get_element_text(self.checkout_title)=="CHECKOUT: YOUR INFORMATION"
