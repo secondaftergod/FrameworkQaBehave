@@ -1,6 +1,9 @@
+
+import self as self
+
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
-
+from behave import fixture
 
 class ProductPage(BasePage):
     ITEMS_LIST = (By.XPATH,"//div[@class='inventory_item_name']")
@@ -37,6 +40,8 @@ class ProductPage(BasePage):
 
     def clickOnBuyButton(self):
         self.click_element(self.BUY_BUTTON)
+
+
 
 
 

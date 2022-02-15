@@ -54,3 +54,9 @@ class BasePage:
         for i in self.findAll(by_locator):
             i.click()
 
+    def get_all_elements_text(self,by_locator):
+        list_text=[]
+        for i in self.findAll(by_locator):
+            list_text.append(i.text)
+        return list_text
+
