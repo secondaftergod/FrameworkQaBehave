@@ -1,28 +1,12 @@
 from behave import *
-from configuration.config import Browser,TestData
-from pages.BuyPage import BuyPage
-from pages.CheckoutPage import CheckoutPage
-from pages.LoginPage import LoginPage
-from pages.OverviewPage import OverviewPage
-from pages.ProductPage import ProductPage
+from configuration.config import TestData
 
-@given(u'Launch the browsers')
-def launch_browser(context):
-    if TestData.BROWSER == 'chrome':
-        context.driver = Browser()
-    else:
-        raise ValueError('Browser is not supported')
 
 @when(u'Open the "https://www.saucedemo.com/" website and login whith username "{user}" and password "{pwd}"')
 def open_login_page(context,user,pwd):
     try:
         context.driver.get(TestData.URL)
-        context.loginPage = LoginPage(context.driver)
         context.loginPage.enter_login(user, pwd)
-        context.productPage=ProductPage(context.driver)
-        context.buyPage = BuyPage(context.driver)
-        context.checkoutPage=CheckoutPage(context.driver)
-        context.overviewPage=OverviewPage(context.driver)
     except:
         context.driver.close()
         assert False,"Test is failed in open login page or login"

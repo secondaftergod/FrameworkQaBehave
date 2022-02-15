@@ -2,16 +2,6 @@ from behave import *
 from configuration.config import Browser,TestData
 from pages.LoginPage import LoginPage
 
-
-
-@given(u'Launch the browser')
-def launch_browser(context):
-    if TestData.BROWSER == 'chrome':
-        context.driver = Browser()
-    else:
-        raise ValueError('Browser is not supported')
-
-
 @when(u'Open the "https://www.saucedemo.com/" website')
 def open_login_page(context):
     try:
