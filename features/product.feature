@@ -16,4 +16,4 @@ Feature: Validate the products list
     Then Check items in basket after Add
     Then Remove items
     Then Check items in basket after Remove
-    Then Close the browser
+

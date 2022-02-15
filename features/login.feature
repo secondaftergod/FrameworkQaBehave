@@ -1,7 +1,7 @@
 Feature: Validate the login feature
 
   Background:
-    Given Launch the browser
+    Given Launch the browsers
     When Open the "https://www.saucedemo.com/" website
     Then The login has been opened
 
