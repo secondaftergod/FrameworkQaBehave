@@ -13,16 +13,27 @@ def step_impl(context):
 
 @then(u'Provide the firstname "{first}" and lastname "{last}" and zip "{zip}"')
 def step_impl(context,first,last,zip):
+    if first=='NULL':
+        first=''
+    elif last=='NULL':
+        last=''
+    elif zip=='NULL':
+        zip=''
     context.checkoutPage.whriteInfo(first,last,zip)
 
 @then(u'Click on the continue button')
 def step_impl(context):
-    context.checkoutPAge.clickContinueButton()
+    context.checkoutPage.clickContinueButton()
 
 @then(u'Error checkout')
 def step_impl(context):
-    raise NotImplementedError(u'STEP: Then Error checkout')
+    context.checkoutPage.errorCheck()
 
-
+@then(u'Check overview page')
+def step_impl(context):
+   try:
+      context.overviewPage.check_page()
+   except:
+      assert False,'Failed on go to page'
 
 

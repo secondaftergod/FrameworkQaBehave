@@ -3,6 +3,7 @@ from configuration.config import Browser,TestData
 from pages.BuyPage import BuyPage
 from pages.CheckoutPage import CheckoutPage
 from pages.LoginPage import LoginPage
+from pages.OverviewPage import OverviewPage
 from pages.ProductPage import ProductPage
 
 @given(u'Launch the browsers')
@@ -21,6 +22,7 @@ def open_login_page(context,user,pwd):
         context.productPage=ProductPage(context.driver)
         context.buyPage = BuyPage(context.driver)
         context.checkoutPage=CheckoutPage(context.driver)
+        context.overviewPage=OverviewPage(context.driver)
     except:
         context.driver.close()
         assert False,"Test is failed in open login page or login"

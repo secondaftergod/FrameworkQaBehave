@@ -37,7 +37,7 @@ class BasePage:
     def verify_element_displayed(self, by_locator):
         try:
             element = WebDriverWait(self.driver, 1).until(EC.visibility_of_element_located(by_locator))
-            return element.is_displayed()
+            return True
         except:
             return False
 

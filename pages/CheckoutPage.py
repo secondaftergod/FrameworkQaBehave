@@ -24,3 +24,6 @@ class CheckoutPage(BasePage):
         self.input_element(self.order_firstName,first)
         self.input_element(self.order_lastName,last)
         self.input_element(self.order_Zip,zip)
+
+    def errorCheck(self):
+        assert self.verify_element_displayed(self.infoError)==True

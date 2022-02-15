@@ -13,19 +13,19 @@ Feature: Validate the products list
     Then Check title checkout page
 
   Scenario: Checkout with valid info
-    And Provide the firstname "<firstname>" and lastname "<lastname> and zip "<zip>"
+    And Provide the firstname "1" and lastname "1" and zip "1"
     And Click on the continue button
-    Then Error checkout
+    Then Check overview page
     Then Close the browser
   Scenario Outline: Checkout with invalid info
-    And Provide the firstname "<firstname>" and lastname "<lastname> and zip "<zip>"
+    And Provide the firstname "<first>" and lastname "<last>" and zip "<zip>"
     And Click on the continue button
     Then Error checkout
     Then Close the browser
     Examples:
-      | firstname | lastname | zip |
-      |           |1         |1    |
-      |1          |          |1    |
-      |1          |1         |     |
+      | first | last | zip |
+      |NULL   |1     |1    |
+      |1      |NULL  |1    |
+      |1      |1     |NULL |
 
 
