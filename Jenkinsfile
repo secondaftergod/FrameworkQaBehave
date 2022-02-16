@@ -8,11 +8,6 @@ pipeline {
                 sh './install.sh'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'behave -f allure_behave.formatter:AllureFormatter -o reports/features/*.feature'
-            }
-        }
     }
 
     post {
