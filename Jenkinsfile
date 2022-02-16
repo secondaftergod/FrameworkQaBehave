@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './env/bin/pytest behave -f allure_behave.formatter:AllureFormatter -o reports/features/*.feature'
+                sh 'behave -f allure_behave.formatter:AllureFormatter -o reports/features/*.feature'
             }
         }
     }
