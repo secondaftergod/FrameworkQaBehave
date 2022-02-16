@@ -13,7 +13,6 @@
 
 **Jenkins**
 
-
 ***Sample commands***:
 
 *Install the latest LTS version:* 
