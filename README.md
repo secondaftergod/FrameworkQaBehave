@@ -13,7 +13,6 @@
 
 **Jenkins**
 
-`/opt/homebrew/opt/openjdk@11/bin/java -Dmail.smtp.starttls.enable=true -jar /opt/homebrew/opt/jenkins-lts/libexec/jenkins.war --httpListenAddress=127.0.0.1 --httpPort=8080`
 
 ***Sample commands***:
 
