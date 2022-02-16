@@ -26,6 +26,9 @@
 *Start the Jenkins service:* 
 `brew services start jenkins-lts`
 
+*Stop the Jenkins service:* 
+`brew services stop jenkins-lts`
+
 *Restart the Jenkins service:* 
 `brew services restart jenkins-lts`
 
