@@ -3,8 +3,8 @@ from behave import fixture
 
 def Browser():
     options = webdriver.ChromeOptions()
-    options.headless = False
-    options = options.add_argument('--disable-blink-features=AutomationControlled')
+    options.headless = True
+    options.add_argument('--disable-blink-features=AutomationControlled')
     driver = webdriver.Chrome(executable_path=TestData.CHROME_EXECUTABLE_PATH, options=options)
     return driver
 
